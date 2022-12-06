@@ -33,6 +33,11 @@ export const styles = StyleSheet.create({
       color: '#ffffff',
       fontWeight: 'bold',
     },
+    textTitleStyle: {
+      fontSize: 20,
+      color: '#014b4b',
+      marginBottom: 16,
+    },
     textLinkStyle: {
       padding: 8,
       fontSize: 12,
