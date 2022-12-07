@@ -16,7 +16,7 @@ const ChangePasswd = ({navigation}) => {
             <TextInput placeholder="Senha" style={styles.inputStyle}/>
             <TextInput placeholder="Confirmar Senha" style={styles.inputStyle}/>
             <Pressable style={styles.pressableStyle} onPress={() => saveChangePasswd()}>
-                <Text style={styles.textPressableStyle}>Sanha nova senha</Text>
+                <Text style={styles.textPressableStyle}>Salvar nova senha</Text>
             </Pressable>
             <View style={{marginTop: 16}}>
                 <Text style={styles.textLinkStyle} onPress={() => saveChangePasswd()}>Retornar a página de login</Text>
