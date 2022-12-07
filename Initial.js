@@ -27,7 +27,7 @@ const Initial = ({navigation}) => {
             <Text style={styles.textPressableStyle}>{!isNewAccount ? 'Entrar' : 'Salvar credenciais'}</Text>
           </Pressable>
           <View style={{marginTop: 16}}>
-          <Text style={styles.textLinkStyle} onPress={() => openChangePasswdPage()}>Esquci minha senha</Text>
+          <Text style={styles.textLinkStyle} onPress={() => openChangePasswdPage()}>Esqueci minha senha</Text>
           <Text style={styles.textLinkStyle} onPress={() => setIsNewAccount(!isNewAccount)}>{!isNewAccount ? 'Criar novo usuário' : 'Já tenho uma conta'}</Text>
           </View>
           <StatusBar style="auto" />
