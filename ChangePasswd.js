@@ -7,16 +7,16 @@ import {styles} from "./styles/ChangePasswdStyle";
 const ChangePasswd = ({navigation}) => {
 
     const saveChangePasswd = () => {
-        navigation.navigate('Peladeiros');
+        navigation.navigate('Login');
     };
 
     return(
         <View style={styles.container}>
-            <Text style={styles.textTitleStyle}>Digite sua nona senha</Text>
+            <Text style={styles.textTitleStyle}>Digite sua nova senha</Text>
             <TextInput placeholder="Senha" style={styles.inputStyle}/>
             <TextInput placeholder="Confirmar Senha" style={styles.inputStyle}/>
             <Pressable style={styles.pressableStyle} onPress={() => saveChangePasswd()}>
-                <Text style={styles.textPressableStyle}>Salvar nova senha</Text>
+                <Text style={styles.textPressableStyle}>Salvar senha</Text>
             </Pressable>
             <View style={{marginTop: 16}}>
                 <Text style={styles.textLinkStyle} onPress={() => saveChangePasswd()}>Retornar a página de login</Text>
