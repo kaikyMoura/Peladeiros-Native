@@ -4,6 +4,7 @@ import { View, Image, TextInput, Pressable, Text, ScrollView } from "react-nativ
 
 import { styles } from "./styles/HomeStyle";
 import HomeCard from "./HomeCard";
+import { MyTabs } from "./src/views/routes";
 
 const users = [
     {
