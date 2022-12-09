@@ -1,6 +1,6 @@
 import React from "react";
 import {StatusBar} from "expo-status-bar";
-import {View, FlatList, Image, TextInput, Pressable, Text} from "react-native";
+import {View, FlatList} from "react-native";
 
 import HomeCard from "./HomeCard";
 
