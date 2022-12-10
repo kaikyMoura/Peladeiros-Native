@@ -2,7 +2,7 @@ import {StyleSheet} from "react-native";
 
 export const styles = StyleSheet.create({
     cardStyle: {
-      elevation: 4,
+      marginBottom: 8,
       color: '#014b4b',
       backgroundColor: '#ffffff',
     },
@@ -16,6 +16,8 @@ export const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
     imageStyle: {
+        marginTop: 4,
+        marginBottom: 4,
         width: '100%',
         height: 260,
     },
