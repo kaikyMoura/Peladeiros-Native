@@ -32,12 +32,13 @@ export const styles = StyleSheet.create({
       backgroundColor: '#014b4b50',
     },
     pressableStyle: {
-      width: '100%',
+      width: '40%',
       padding: 10,
       textAlign: 'center',
       alignItems: 'center',
       borderRadius: 4,
       backgroundColor: '#014b4b',
+      left: 220
     },
     textPressableStyle: {
       display: 'flex',
@@ -45,4 +46,10 @@ export const styles = StyleSheet.create({
       color: '#ffffff',
       fontWeight: 'bold',
     },
+    thumbsup: {
+      width: '40%',
+      textAlign: 'center',
+      alignItems: 'center',
+      borderRadius: 4,
+    }
 });

@@ -1,20 +1,36 @@
 import React from "react";
-import {View, Image, TextInput, Pressable, Text} from "react-native";
-
-import {styles} from "./styles/HomeCardStyle";
+import { View, Image, Pressable, Text } from "react-native";
+import { styles } from "./styles/HomeCardStyle";
+import { Feather } from '@expo/vector-icons';
 
 const HomeCard = (props) => {
-    const {name, date, subject, image, comment} = props;
+    const { name, date, subject, image, comment } = props;
 
-    return(
+    const handlerParticipante = (index) => {
+        setIndexState(index);
+        setCountParticipante(countParticipante + 1);
+
+        if (!showNotify) {
+            setShowNotify(true);
+        }
+    }
+
+    return (
         <View style={styles.cardStyle}>
             <Text style={styles.textSubjectStyle}>{subject}</Text>
             <View style={styles.lineRowStyle}>
                 <Text style={styles.textNameStyle}>{name}</Text>
+
                 <Text style={styles.textNameStyle}>{date}</Text>
             </View>
-            <Image source={{uri: image}} style={styles.imageStyle}/>
+            <Image source={{ uri: image }} style={styles.imageStyle} />
             <Text style={styles.textNameStyle}>{comment}</Text>
+            <Pressable style={styles.thumbsup}>
+                <Feather name="thumbs-up" size={24} color="#014b4b" />
+            </Pressable>
+            <Pressable onPress={() => alert("Você se inscreveu na  pelada " + subject)} style={styles.pressableStyle}>
+                <Text style={styles.textPressableStyle}>Partipar</Text>
+            </Pressable>
         </View>
     );
 }
