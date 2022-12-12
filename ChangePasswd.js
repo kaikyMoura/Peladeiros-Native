@@ -7,7 +7,7 @@ import {styles} from "./styles/ChangePasswdStyle";
 const ChangePasswd = ({navigation}) => {
 
     const saveChangePasswd = () => {
-        navigation.navigate('Login');
+        navigation.navigate('Inicial');
     };
 
     return(

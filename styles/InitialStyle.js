@@ -12,12 +12,12 @@ export const styles = StyleSheet.create({
     inputStyle: {
       width: '100%',
       height: 40,
-      padding: 4,
+      padding: 8,
       borderRadius: 4,
       marginBottom: 16,
-      color: '#ffffff',
+      color: '#000000',
       fontSize: 16,
-      backgroundColor: '#014b4b50',
+      backgroundColor: '#dddddd',
     },
     pressableStyle: {
       width: '100%',
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
       textAlign: 'center',
       alignItems: 'center',
       borderRadius: 4,
-      backgroundColor: '#014b4b',
+      backgroundColor: '#000000',
     },
     textPressableStyle: {
       display: 'flex',
@@ -36,6 +36,6 @@ export const styles = StyleSheet.create({
     textLinkStyle: {
       padding: 8,
       fontSize: 12,
-      color: '#014b4b',
+      color: '#000000',
     }
 });
