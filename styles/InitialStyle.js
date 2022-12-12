@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
       textAlign: 'center',
       alignItems: 'center',
       borderRadius: 4,
-      backgroundColor: '#000000',
+      backgroundColor: '#014B4A',
     },
     textPressableStyle: {
       display: 'flex',

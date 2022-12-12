@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
       borderRadius: 4,
       textAlign: 'center',
       alignItems: 'center',
-      backgroundColor: '#1b5e20',
+      backgroundColor: '#014B4A',
     },
     presUpdateStyle: {
       width: '100%',
