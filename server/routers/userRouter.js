@@ -1,21 +1,16 @@
 const express = require("express");
 
 const router = express.Router();
-const {creteNewUser, getAllUsers, getUserById, updateUserById, updateUserByAccount, deleteUser} = require("../controllers/userController");
+const {creteNewUser, getAllUsers, getUserById, updateUserById, deleteUser} = require("../controllers/userController");
 
-router.route("/Inicial")
-.post(creteNewUser)
-.patch(updateUserByAccount)
-.get(getAllUsers);
-
-router.route("/Inicial/:account")
-.patch(updateUserByAccount);
+router.route("/Criar")
+.post(creteNewUser);
 
 router.route("/Home")
-.get(getAllUsers);
+.get(getAllUsers)
+.get(getUserById);
 
-router.route("/Home/:id")
-.get(getUserById)
+router.route("/Detalhes/:id")
 .patch(updateUserById)
 .delete(deleteUser);
 

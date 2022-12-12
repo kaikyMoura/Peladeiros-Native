@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
     container: {
       flex: 1,
       padding: 8,
-      color: '#014b4b',
+      color: '#000000',
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#ffffff',
@@ -15,9 +15,9 @@ export const styles = StyleSheet.create({
       padding: 4,
       borderRadius: 4,
       marginBottom: 16,
-      color: '#ffffff',
+      color: '#000000',
       fontSize: 16,
-      backgroundColor: '#014b4b50',
+      backgroundColor: '#dddddd',
     },
     pressableStyle: {
       width: '100%',
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
       textAlign: 'center',
       alignItems: 'center',
       borderRadius: 4,
-      backgroundColor: '#014b4b',
+      backgroundColor: '#000000',
     },
     textPressableStyle: {
       display: 'flex',
@@ -35,12 +35,12 @@ export const styles = StyleSheet.create({
     },
     textTitleStyle: {
       fontSize: 20,
-      color: '#014b4b',
+      color: '#000000',
       marginBottom: 16,
     },
     textLinkStyle: {
       padding: 8,
       fontSize: 12,
-      color: '#014b4b',
+      color: '#000000',
     }
 });

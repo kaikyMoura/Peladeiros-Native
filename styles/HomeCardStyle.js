@@ -2,18 +2,33 @@ import {StyleSheet} from "react-native";
 
 export const styles = StyleSheet.create({
     cardStyle: {
+      elevation: 4,
       marginBottom: 8,
-      color: '#014b4b',
       backgroundColor: '#ffffff',
     },
+    avatarStyle: {
+      width: 42,
+      height: 42,
+      borderRadius: 360,
+      backgroundColor: '#dddddd',
+    },
     lineRowStyle: {
+        width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
+    textSmallStyle: {
+      fontSize: 12,
+      color: '#000000',
+    },
+    textTitleStyle: {
+      fontSize: 14,
+      color: '#000000',
+      fontWeight: 'bold',
+    },
     textSubjectStyle: {
       fontSize: 14,
-      color: '#014b4b',
-      fontWeight: 'bold',
+      color: '#000000',
     },
     imageStyle: {
         marginTop: 4,
@@ -29,7 +44,7 @@ export const styles = StyleSheet.create({
       marginBottom: 16,
       color: '#ffffff',
       fontSize: 16,
-      backgroundColor: '#014b4b50',
+      backgroundColor: '#dddddd',
     },
     pressableStyle: {
       width: '100%',
@@ -37,7 +52,7 @@ export const styles = StyleSheet.create({
       textAlign: 'center',
       alignItems: 'center',
       borderRadius: 4,
-      backgroundColor: '#014b4b',
+      backgroundColor: '#000000',
     },
     textPressableStyle: {
       display: 'flex',

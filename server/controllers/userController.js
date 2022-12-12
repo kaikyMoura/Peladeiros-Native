@@ -2,12 +2,12 @@ const User = require("../models/userModel");
 
 exports.creteNewUser = async (req, res) => {
     try {
-        let model = await User.create(req.body);
+        const model = await User.create(req.body);
 
         res.status(201).json({
             status: "Success",
             data: {
-                model
+                user: model
             }
         });
     } catch (error) {
@@ -44,7 +44,7 @@ exports.getAllUsers = async (req, res) => {
 
 exports.getUserById = async (req, res) => {
     try {
-        let model = await User.findById(req.params.id);
+        const model = await User.findById(req.params.id);
         
         res.status(200).json({
             status: "Success",
@@ -64,28 +64,7 @@ exports.getUserById = async (req, res) => {
 
 exports.updateUserById = async (req, res) => {
     try {
-        let model = await User.findByIdAndUpdate(req.params.id, req.body, {
-            new: true,
-            runValidators: true
-        });
-
-        res.status(200).json({
-            status: "Success",
-            data: {
-                model
-            }
-        });
-    } catch (error) {
-        res.status(404).json({
-            status: "Failed",
-            message: "User not updated!" 
-        });
-    }
-};
-
-exports.updateUserByAccount = async (req, res) => {
-    try {
-        let model = await User.findOneAndUpdate(req.params.account, req.body, {
+        const model = await User.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
             runValidators: true
         });

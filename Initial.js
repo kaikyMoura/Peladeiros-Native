@@ -1,13 +1,12 @@
 import React, {useState} from "react";
 import {StatusBar} from "expo-status-bar";
 import {View, Image, TextInput, Pressable, Text} from "react-native";
-import axios from "axios";
 
 import logoIcon from "./assets/android-icon-72x72.png";
 
 import {styles} from "./styles/InitialStyle";
 
-const hostPath = `http://192.168.15.38:19001/Inicial`;
+const nowDate = new Date();
 
 const Initial = ({navigation}) => {
     const [account, setAccount] = useState('');
@@ -24,47 +23,14 @@ const Initial = ({navigation}) => {
     };
 
     const handleSubmitLogin = async () => {
-      if (account !== null && password !== null) {
-        await fetch(hostPath).then(res => {
-          if(res.ok) {
-            return res.json();
-          }
-        }).then(data => {
-          let users = data.data.model;
-          users.map(user => {
-            if(user.account === account && user.passwd === password) {
-              const userCredential = {
-                onstate: 1
-              }
-              axios.patch(`${hostPath}/${account}`, userCredential).then(res => {
-                if(res.status === 200) {
-                  navigation.navigate('Home');
-                }
-              });
-            }
-          });
-        }).catch(error => {
-          console.log(error);
-        });
+      if (account !== null && password !== null && passwordConfirm === password) {
+        navigation.navigate('Home');
       }
     };
 
     const handleSubmitRegister = async () => {
       if (account !== null && password !== null && passwordConfirm === password) {
-        const userCredential = {
-          name: '',
-          phone: '',
-          email: '',
-          account: account,
-          passwd: password,
-          avatar: '',
-          onstate: 1
-        }
-        await axios.post(`http://192.168.15.38:19001/Inicial`, userCredential).then((response) => {
-          if(response.status === 201) {
-            navigation.navigate('Home');
-          }
-        });
+        navigation.navigate('Home');
       }
     };
 
@@ -75,18 +41,18 @@ const Initial = ({navigation}) => {
     return(
         <View style={styles.container}>
           <Image source={logoIcon} style={{marginBottom: 16}}/>
-          <TextInput keyboardType="default" value={account} placeholder="Conta"
-          onChangeText={(email) => setAccount(email)} style={styles.inputStyle}/>
-          <TextInput keyboardType="visible-password" value={password} placeholder="Senha"
-          onChangeText={(passwd) => setPassword(passwd)} style={styles.inputStyle}/>
-          {isNewAccount && (<TextInput keyboardType="visible-password" value={passwordConfirm} placeholder="Confirmar Senha"
-          onChangeText={(passwdConfirm) => setPasswordConfirm(passwdConfirm)} style={styles.inputStyle}/>)}
+          <TextInput keyboardType="email-address" value={account.trim()} placeholder="Conta"
+          onChangeText={(email) => setAccount(email.trim())} style={styles.inputStyle}/>
+          <TextInput keyboardType="visible-password" value={password.trim()} placeholder="Senha"
+          onChangeText={(passwd) => setPassword(passwd.trim())} style={styles.inputStyle}/>
+          {isNewAccount && (<TextInput keyboardType="visible-password" value={passwordConfirm.trim()} placeholder="Confirmar Senha"
+          onChangeText={(passwdConfirm) => setPasswordConfirm(passwdConfirm.trim())} style={styles.inputStyle}/>)}
           <Pressable style={styles.pressableStyle} onPress={handleSubmit}>
             <Text style={styles.textPressableStyle}>{!isNewAccount ? 'Entrar' : 'Salvar credenciais'}</Text>
           </Pressable>
           <View style={{marginTop: 16}}>
-          <Text style={styles.textLinkStyle} onPress={() => openChangePasswdPage()}>Esquci minha senha</Text>
-          <Text style={styles.textLinkStyle} onPress={() => setIsNewAccount(!isNewAccount)}>{!isNewAccount ? 'Criar novo usuário' : 'Já tenho uma conta'}</Text>
+            <Text style={styles.textLinkStyle} onPress={() => openChangePasswdPage()}>Esquci minha senha</Text>
+            <Text style={styles.textLinkStyle} onPress={() => setIsNewAccount(!isNewAccount)}>{!isNewAccount ? 'Criar novo usuário' : 'Já tenho uma conta'}</Text>
           </View>
           <StatusBar style="auto" />
         </View>
