@@ -1,4 +1,4 @@
-## Instruções para inicilização do server ##
+## Instruções para inicialização do server ##
 
 - Execute o comando **cd server** para ir ao diretorio do sevidor.
 - Execute o comando **npm install** para baixar todas dependências do servidor.
